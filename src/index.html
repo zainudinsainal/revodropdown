@@ -52,7 +52,7 @@
       }
 
       revo-dropdown {
-        width: 200px;
+        min-width: 200px;
       }
 
       .tile.small {
@@ -75,6 +75,16 @@
       <li>
         <div class="sub-title">Regular select</div>
         <revo-dropdown data-label="name" placeholder="People" max-height="300"></revo-dropdown>
+      </li>
+    </ul>
+    <ul class="tile large" style="padding: 20px;">
+      <li>
+        <div class="sub-title">Multiselect Autocomplete</div>
+        <revo-dropdown data-label="name" data-id="email" autocomplete="true" multiple="true" placeholder="Philosophers"></revo-dropdown>
+      </li>
+      <li>
+        <div class="sub-title">Multiselect Regular</div>
+        <revo-dropdown data-label="name" multiple="true" placeholder="People"></revo-dropdown>
       </li>
     </ul>
     <br>
