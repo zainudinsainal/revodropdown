@@ -9,17 +9,26 @@ export namespace Components {
     interface RevoDropdown {
         /**
           * Define object mapping for id/value that should always be available in the results even after filtering
+          * @default []
          */
         "appendSource": any[];
         /**
           * Where to append element
+          * @default 'body'
          */
         "appendTo": 'body' | 'current';
         /**
           * Should dropdown autoclose on changeValue
+          * @default true
          */
         "autoClose": boolean;
+        /**
+          * @default false
+         */
         "autoFocus": boolean;
+        /**
+          * @default false
+         */
         "autocomplete": boolean;
         /**
           * Filter value
@@ -49,15 +58,23 @@ export namespace Components {
           * Filter criteria
          */
         "filter": 'contains' | 'start';
+        /**
+          * @default true
+         */
         "hasFilter": boolean;
         "maxHeight": number;
+        /**
+          * @default false
+         */
         "multiple": boolean;
         /**
           * Placeholder text
+          * @default 'Select'
          */
         "placeholder": string;
         /**
           * Define object mapping for id/value
+          * @default []
          */
         "source": any[];
         /**
@@ -70,10 +87,14 @@ export namespace Components {
           * Define object mapping for labels
          */
         "dataLabel": string;
+        /**
+          * @default false
+         */
         "isFocused": boolean;
         "refresh": (source: any[]) => Promise<void>;
         /**
           * Define object mapping for id/value
+          * @default []
          */
         "sourceItems": any[];
     }
@@ -87,13 +108,37 @@ export interface RevoListCustomEvent<T> extends CustomEvent<T> {
     target: HTMLRevoListElement;
 }
 declare global {
+    interface HTMLRevoDropdownElementEventMap {
+        "changed": { val: any; originalEvent?: MouseEvent };
+        "close": any;
+        "open": any;
+    }
     interface HTMLRevoDropdownElement extends Components.RevoDropdown, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRevoDropdownElementEventMap>(type: K, listener: (this: HTMLRevoDropdownElement, ev: RevoDropdownCustomEvent<HTMLRevoDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRevoDropdownElementEventMap>(type: K, listener: (this: HTMLRevoDropdownElement, ev: RevoDropdownCustomEvent<HTMLRevoDropdownElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLRevoDropdownElement: {
         prototype: HTMLRevoDropdownElement;
         new (): HTMLRevoDropdownElement;
     };
+    interface HTMLRevoListElementEventMap {
+        "changed": { item: any; e: any };
+    }
     interface HTMLRevoListElement extends Components.RevoList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLRevoListElementEventMap>(type: K, listener: (this: HTMLRevoListElement, ev: RevoListCustomEvent<HTMLRevoListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLRevoListElementEventMap>(type: K, listener: (this: HTMLRevoListElement, ev: RevoListCustomEvent<HTMLRevoListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLRevoListElement: {
         prototype: HTMLRevoListElement;
@@ -108,17 +153,26 @@ declare namespace LocalJSX {
     interface RevoDropdown {
         /**
           * Define object mapping for id/value that should always be available in the results even after filtering
+          * @default []
          */
         "appendSource"?: any[];
         /**
           * Where to append element
+          * @default 'body'
          */
         "appendTo"?: 'body' | 'current';
         /**
           * Should dropdown autoclose on changeValue
+          * @default true
          */
         "autoClose"?: boolean;
+        /**
+          * @default false
+         */
         "autoFocus"?: boolean;
+        /**
+          * @default false
+         */
         "autocomplete"?: boolean;
         /**
           * Filter value
@@ -136,8 +190,14 @@ declare namespace LocalJSX {
           * Filter criteria
          */
         "filter"?: 'contains' | 'start';
+        /**
+          * @default true
+         */
         "hasFilter"?: boolean;
         "maxHeight"?: number;
+        /**
+          * @default false
+         */
         "multiple"?: boolean;
         /**
           * When value changed
@@ -153,10 +213,12 @@ declare namespace LocalJSX {
         "onOpen"?: (event: RevoDropdownCustomEvent<any>) => void;
         /**
           * Placeholder text
+          * @default 'Select'
          */
         "placeholder"?: string;
         /**
           * Define object mapping for id/value
+          * @default []
          */
         "source"?: any[];
         /**
@@ -169,10 +231,14 @@ declare namespace LocalJSX {
           * Define object mapping for labels
          */
         "dataLabel"?: string;
+        /**
+          * @default false
+         */
         "isFocused"?: boolean;
         "onChanged"?: (event: RevoListCustomEvent<{ item: any; e: any }>) => void;
         /**
           * Define object mapping for id/value
+          * @default []
          */
         "sourceItems"?: any[];
     }

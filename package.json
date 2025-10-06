@@ -45,7 +45,7 @@
   "scripts": {
     "pretty-quick": "pretty-quick",
     "build": "rm -rf ./framework && stencil build --docs && npm run build:framework",
-    "build:framework": "npm run build:vue && npm run build:angular && npm run build:react && npm run build:svelte",
+    "build:framework": "npm run build:vue",
     "build:vue": "npm run compile-framework --type=vue",
     "build:react": "npm run compile-framework --type=react",
     "build:angular": "npm run compile-framework --type=angular",
@@ -65,12 +65,9 @@
   "license": "MIT",
   "devDependencies": {
     "@angular/core": "^11.0.9",
-    "@stencil/angular-output-target": "0.0.5",
-    "@stencil/core": "^2.22.2",
-    "@stencil/react-output-target": "0.0.9",
-    "@stencil/sass": "^1.3.2",
-    "@stencil/svelte-output-target": "0.0.3",
-    "@stencil/vue-output-target": "^0.2.5",
+    "@stencil/core": "^4.38.0",
+    "@stencil/sass": "^3.0.0",
+    "@stencil/vue-output-target": "^0.11.8",
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -82,7 +79,7 @@
     "react-dom": "^17.0.1",
     "rxjs": "^6.6.3",
     "svelte": "^3.31.2",
-    "typescript": "^3.9.7",
+    "typescript": "^5.0.0",
     "vue": "^3.0.5"
   }
 }

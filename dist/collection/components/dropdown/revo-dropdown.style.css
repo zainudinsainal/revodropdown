@@ -46,7 +46,7 @@ revo-dropdown input.filter-box:focus {
 }
 revo-dropdown .actions {
   right: 9px;
-  top: calc(50% - $font-size);
+  top: calc(50% - 14px);
   position: absolute;
 }
 revo-dropdown label {

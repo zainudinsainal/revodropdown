@@ -39,6 +39,13 @@
 
 Change value
 
+#### Parameters
+
+| Name            | Type         | Description |
+| --------------- | ------------ | ----------- |
+| `val`           | `any`        |             |
+| `originalEvent` | `MouseEvent` |             |
+
 #### Returns
 
 Type: `Promise<void>`
@@ -48,6 +55,12 @@ Type: `Promise<void>`
 ### `doClose(isDisconnected?: boolean) => Promise<void>`
 
 Close dropdown
+
+#### Parameters
+
+| Name             | Type      | Description |
+| ---------------- | --------- | ----------- |
+| `isDisconnected` | `boolean` |             |
 
 #### Returns
 
